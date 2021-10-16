@@ -26,7 +26,7 @@ const useStyles = createUseStyles({
   },
   addButton: {
     fontSize: "15rem",
-    fontWeight: "bold",
+    fontWeight: "normal",
 
     color: "transparent",
     textShadow: ({ theme }) => `2px 2px 5px ${theme.background}`,
