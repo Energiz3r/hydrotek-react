@@ -17,6 +17,7 @@ const useStyles = createUseStyles({
     marginLeft: "1rem",
   },
   menuButton: {
+    //background: "red",
     minHeight: "3rem",
     fontSize: ({ theme }) => theme.mSize,
     padding: 0,
