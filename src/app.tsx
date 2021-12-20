@@ -2,12 +2,14 @@ import { Provider } from "react-redux";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 import AppMain from "./components/AppMain";
-import { facebookCallback, dummyLogin } from "./utils/login.js";
+import { facebookCallback } from "./utils/login.js";
 import { store } from "./stores/store";
 import { buildForDev, facebookAppID } from "./config";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "react-jss";
 import { theme } from "./theme";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 if (!buildForDev) {
   console.log("Including Facebook API...");
@@ -20,8 +22,10 @@ if (!buildForDev) {
   document.body.appendChild(script);
 
   console.log("Setting up Facebook login handler...");
+  // @ts-ignore
   window.fbAsyncInit = function () {
-    FB.init({
+  // @ts-ignore
+  FB.init({
       appId: facebookAppID,
       cookie: true, // enable cookies to allow the server to access the session
       xfbml: false,
@@ -29,7 +33,8 @@ if (!buildForDev) {
       oauth: true,
       version: "v3.2",
     });
-    FB.Event.subscribe("auth.statusChange", function (response) {
+  // @ts-ignore
+  FB.Event.subscribe("auth.statusChange", function (response) {
       facebookCallback(response);
     });
   }.bind(this);

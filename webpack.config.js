@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: './src/app.js',
+  entry: './src/app.tsx',
   output: {
     path: path.join(__dirname, 'server'),
     filename: 'bundle.js',
@@ -17,18 +17,25 @@ module.exports = {
     })
   ],
   module: {
-    rules: [{
-      loader: 'babel-loader',
-      test: /\.js$/,
-      exclude: /node_modules/
-    }, {
+    rules: [
+    {
       test: /\.s?css$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        'sass-loader'
-      ]
-    }]
+      use: ['style-loader','css-loader','sass-loader']
+    },
+    {
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/
+    },
+    {
+      test: /\.tsx$/,
+      use: 'ts-loader',
+      exclude: /node_modules/
+    },
+    ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   devtool: 'inline-source-map',
   devServer: {
