@@ -1,3 +1,3 @@
-# hydrotek-react
+### HydroTek
 
-See: https://github.com/Energiz3r/hydrotek
+## Cloud App - React, Typescript, Material-UI

@@ -1,5 +1,5 @@
 import React from "react";
-import { getFriendlyFromTimestamp, monthDiff } from "../utils/dateUtils";
+import { getFriendlyFromTimestamp, monthDiff } from "../utils/dateUtils.js";
 import { TileIcon } from "./TileIcon";
 import { icon } from "../utils/iconClasses";
 
