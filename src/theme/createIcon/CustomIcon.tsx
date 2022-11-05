@@ -1,24 +1,6 @@
 import React, { forwardRef, SVGAttributes } from "react";
-import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Property as CSSProperty } from "csstype";
-
-const useStyles = makeStyles<
-  Theme,
-  {
-    color: CSSProperty.Color;
-    width: CSSProperty.Width;
-    height: CSSProperty.Height;
-  }
->(() => ({
-  icon: ({ color, width, height }) => ({
-    width,
-    height,
-    color,
-    display: "inline-block",
-    lineHeight: "1em",
-    flexShrink: 0,
-  }),
-}));
+import * as styles from "./CustomIcon.css";
 
 export type IconProps = Omit<
   SVGAttributes<SVGElement>,
@@ -60,7 +42,6 @@ export const CustomIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
     ...rest
   } = props;
 
-  const styles = useStyles({ color, width, height });
   const _path = (children ?? fallbackIcon.path) as React.ReactNode;
   const _viewBox = viewBox ?? fallbackIcon.viewBox;
 
@@ -69,6 +50,7 @@ export const CustomIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
       ref={ref}
       focusable={focusable}
       className={`${styles.icon} ${className}`}
+      style={{ width, height, color }}
       viewBox={_viewBox}
       {...rest}
     >

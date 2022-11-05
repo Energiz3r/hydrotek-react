@@ -1,7 +1,5 @@
-import './GlobalStyles.css';
+import "./GlobalStyles.css";
 
-const GlobalStyles = (): null => {
+export const GlobalStyles = (): null => {
   return null;
 };
-
-export default GlobalStyles;

@@ -1,0 +1,68 @@
+import { PaletteColor } from "../ThemeColor";
+
+export const colors: PaletteColor = {
+  theme: {
+    main: "rgb(0, 54, 180)",
+    dark: "",
+    light: "",
+    hover: "",
+    neutral: "",
+    contrastText: "",
+  },
+  primary: {
+    main: "rgb(53, 54, 56)",
+    dark: "rgb(38, 38, 38)",
+    light: "rgb(65, 65, 65)",
+    hover: "rgb(100, 100, 100)",
+    neutral: "",
+    contrastText: "",
+  },
+  secondary: {
+    main: "rgb(65, 65, 65)",
+    dark: "rgb(53, 54, 56)",
+    light: "rgb(100, 100, 100)",
+    hover: "rgb(85, 85, 85)",
+    neutral: "",
+    contrastText: "",
+  },
+  border: {
+    main: "rgb(53, 54, 56)",
+    dark: "#000",
+    light: "",
+    hover: "",
+    neutral: "",
+    contrastText: "",
+  },
+  success: {
+    main: "#028702",
+    dark: "",
+    light: "#F2F9F2",
+    hover: "",
+    neutral: "",
+    contrastText: "",
+  },
+  error: {
+    main: "#E02020",
+    dark: "",
+    light: "#FDF2F2",
+    hover: "",
+    neutral: "",
+    contrastText: "",
+  },
+  warning: {
+    main: "#DA6A00",
+    dark: "",
+    light: "#FFF9F0",
+    hover: "",
+    neutral: "",
+    contrastText: "",
+  },
+  info: {
+    main: "#005EAB",
+    dark: "",
+    light: "#F2F7FB",
+    hover: "",
+    neutral: "",
+    contrastText: "",
+  },
+};

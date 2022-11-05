@@ -1,21 +1,19 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement } from "react";
 
-const GlobalFonts = (): ReactElement => {
+export const GlobalFonts = (): ReactElement => {
   return (
     <>
-      <link rel='preconnect' href='https://fonts.googleapis.com' />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
-        rel='preconnect'
-        href='https://fonts.gstatic.com'
-        crossOrigin='true'
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="true"
       />
       <link
-        as='style'
-        href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'
-        rel='stylesheet preload prefetch'
+        as="style"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet preload prefetch"
       />
     </>
   );
 };
-
-export default GlobalFonts;

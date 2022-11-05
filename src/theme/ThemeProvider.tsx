@@ -1,14 +1,15 @@
-import React from 'react';
-import { darkTheme } from './dark';
+import React from "react";
+import { darkTheme } from "./dark/theme.css";
+import { lightTheme } from "./light/theme.css";
 
 export enum ThemeName {
-  dark = 'dark',
-  //light = 'light'
+  dark = "dark",
+  light = "light",
 }
 
 const ThemeMap = {
   dark: darkTheme,
-  //light: lightTheme
+  light: lightTheme,
 } as const;
 
 export const ThemeProvider: React.FC<{
