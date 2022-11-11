@@ -1,11 +1,12 @@
 // Version 4.1
 // @ts-nocheck
-export const pSBC = (
+export const processColors = (
   percentage: number,
   color0: string,
   color1?: string,
   linear?: boolean
 ) => {
+  console.log(color0);
   let r,
     g,
     b,
@@ -26,11 +27,11 @@ export const pSBC = (
     return null;
   (h = color0.length > 9),
     (h = a ? (color1.length > 9 ? true : color1 == "c" ? !h : false) : h),
-    (f = pSBC.pSBCr(color0)),
+    (f = processColors.pSBCr(color0)),
     (P = percentage < 0),
     (t =
       color1 && color1 != "c"
-        ? pSBC.pSBCr(color1)
+        ? processColors.pSBCr(color1)
         : P
         ? { r: 0, g: 0, b: 0, a: -1 }
         : { r: 255, g: 255, b: 255, a: -1 }),
@@ -70,7 +71,7 @@ export const pSBC = (
     );
 };
 
-pSBC.pSBCr = (d) => {
+processColors.pSBCr = (d) => {
   const i = parseInt;
   let n = d.length,
     x = {};
