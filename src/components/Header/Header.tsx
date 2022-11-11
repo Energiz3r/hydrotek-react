@@ -7,7 +7,7 @@ export const Header = () => {
       <div className={styles.contentContainer}>
         <div className={styles.logoContainer}>logo</div>
         <div className={styles.titleContainer}>
-          <h1>Header</h1>
+          <h1>Hydrotek</h1>
         </div>
         <div className={styles.utilityContainer}>utilities</div>
       </div>

@@ -4,10 +4,11 @@ import { palette, shadows, breakpoints } from "../../theme";
 export const container = style({
   background: palette.theme.highlight,
   color: palette.theme.text,
+  padding: "20px",
 });
 
 export const contentContainer = style({
-  background: "",
+  display: "flex",
 });
 
 export const logoContainer = style({

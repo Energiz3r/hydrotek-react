@@ -24,6 +24,7 @@ globalStyle(`${gs} > div`, {
 });
 
 globalStyle("html, body", {
+  backgroundColor: "#000",
   margin: 0,
 });
 globalStyle("html button, html input, html select, html textarea", {
