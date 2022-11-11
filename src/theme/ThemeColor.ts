@@ -15,16 +15,4 @@ export const PaletteColorToken = {
   info: "",
 };
 
-type PaletteColorType = {
-  primary: any;
-  secondary: any;
-  border: any;
-  success: any;
-  error: any;
-  warning: any;
-  info: any;
-};
-
 export type PaletteColor = typeof PaletteColorToken;
-//export type PaletteColor = PaletteColorType;
-//export type PaletteColorOption = typeof PaletteColorOptionToken;

@@ -2,7 +2,8 @@ import { style } from "@vanilla-extract/css";
 import { palette, shadows, breakpoints } from "../../theme";
 
 export const container = style({
-  background: palette.primary.light,
+  background: palette.theme.highlight,
+  color: palette.theme.text,
 });
 
 export const contentContainer = style({
