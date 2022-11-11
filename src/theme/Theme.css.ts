@@ -2,16 +2,15 @@ import { PaletteColor, PaletteColorToken } from "./ThemeColor";
 import { ThemeTypography, ThemeTypographyToken } from "./ThemeTypography";
 import { ThemeShadows, ThemeShadowToken } from "./ThemeShadows";
 import { createThemeContract } from "@vanilla-extract/css";
-import React from "react";
 
-export type ComponentLibraryTheme = {
+export type ThemeType = {
   name: string;
   palette: PaletteColor;
   typography: ThemeTypography;
   shadows: ThemeShadows;
 };
 
-export const themeVars = createThemeContract<ComponentLibraryTheme>({
+export const themeVars = createThemeContract<ThemeType>({
   name: "",
   palette: PaletteColorToken,
   typography: ThemeTypographyToken,

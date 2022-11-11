@@ -1,21 +1,18 @@
-export const PaletteColorOptionToken = {
-  main: "",
-  dark: "",
-  light: "",
-  hover: "",
-  neutral: "",
-  contrastText: "",
-};
-
 export const PaletteColorToken = {
-  theme: PaletteColorOptionToken,
-  primary: PaletteColorOptionToken,
-  secondary: PaletteColorOptionToken,
-  border: PaletteColorOptionToken,
-  success: PaletteColorOptionToken,
-  error: PaletteColorOptionToken,
-  warning: PaletteColorOptionToken,
-  info: PaletteColorOptionToken,
+  theme: {
+    highlight: "",
+    alternate: "",
+    text: "",
+    container: "",
+    background: "",
+  },
+  border: {
+    main: "",
+  },
+  success: "",
+  error: "",
+  warning: "",
+  info: "",
 };
 
 type PaletteColorType = {
@@ -30,4 +27,4 @@ type PaletteColorType = {
 
 export type PaletteColor = typeof PaletteColorToken;
 //export type PaletteColor = PaletteColorType;
-export type PaletteColorOption = typeof PaletteColorOptionToken;
+//export type PaletteColorOption = typeof PaletteColorOptionToken;
