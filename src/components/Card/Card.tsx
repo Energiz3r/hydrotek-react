@@ -3,10 +3,11 @@ import * as styles from "./Card.css";
 
 export interface CardProps {
   isButton?: boolean;
+  color?: string;
   children?: React.ReactNode;
 }
 
-export const Card = ({ isButton, children }: CardProps) => {
+export const Card = ({ isButton, color, children }: CardProps) => {
   return (
     <div
       className={styles.container}

@@ -6,7 +6,7 @@ function App() {
   return (
     <ThemeProvider theme={ThemeName.dark}>
       <div className="App">
-        <Card>Hello</Card>
+        <Card isButton={true}>Hello</Card>
       </div>
     </ThemeProvider>
   );

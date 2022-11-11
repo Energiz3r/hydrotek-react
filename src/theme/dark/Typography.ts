@@ -36,39 +36,39 @@ export const typography: ThemeTypography = {
   small: {
     fontSize: "0.875rem",
     lineHeight: "1.125rem",
-    color: colors.primary.neutral,
+    color: colors.theme.text,
   },
   large: {
     fontSize: "1.5rem",
     lineHeight: "1.875rem",
-    color: colors.primary.dark,
+    color: colors.theme.text,
   },
   p: {
     fontSize: "1rem",
     lineHeight: "1.25rem",
-    color: colors.primary.dark,
+    color: colors.theme.text,
   },
   button: {
     fontSize: "1.125rem",
     lineHeight: "1",
-    color: colors.primary.dark,
+    color: colors.theme.text,
     fontWeight: "700",
     textTransform: "none",
   },
   sectionTitle: {
     fontSize: "1.75rem",
     lineHeight: "1.5rem",
-    color: colors.primary.dark,
+    color: colors.theme.text,
     letterSpacing: "-0.13125rem",
   },
   a: {
-    color: colors.primary.dark,
+    color: colors.theme.text,
     "&:hover": {
-      color: colors.primary.dark,
+      color: colors.theme.text,
       cursor: "pointer",
     },
     "&:visited": {
-      color: colors.primary.dark,
+      color: colors.theme.text,
     },
   },
 };
