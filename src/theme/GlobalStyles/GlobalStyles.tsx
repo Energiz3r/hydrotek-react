@@ -1,5 +1,6 @@
-import "./GlobalStyles.css";
+import React from "react";
+import * as styles from "./GlobalStyles.css";
 
-export const GlobalStyles = (): null => {
-  return null;
+export const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
+  return <div className={styles.globalStylesContainer}>{children}</div>;
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, CardProps } from "./Card";
 import type { ComponentStory } from "@storybook/react";
-import { ThemeName, ThemeProvider } from "../../theme";
 
 const options = {
   title: "Components/Card",
@@ -11,9 +10,7 @@ const options = {
 export default options;
 
 const Template: ComponentStory<typeof Card> = (args: CardProps) => (
-  <ThemeProvider theme={ThemeName.dark}>
-    <Card isButton={true}>Test Button</Card>
-  </ThemeProvider>
+  <Card isButton={true}>Test Button</Card>
 );
 
 export const Default = Template.bind({});

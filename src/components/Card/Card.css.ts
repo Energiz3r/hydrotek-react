@@ -3,14 +3,6 @@ import { palette, shadows } from "../../theme";
 import { palette2 } from "../../theme/dark/Colors";
 import { pSBC } from "../../utils/pSBC";
 
-export const palette4 = {
-  a: "#3C78FF", // blue
-  b: "#303036", // grey
-  c: "#FFFAFF", // white
-  d: "#FC5130", // red
-  e: "#050401", // black
-};
-
 export const container = style({
   background: `radial-gradient(${pSBC(0.1, palette2.b)},${palette2.b})`,
   ":hover": {
