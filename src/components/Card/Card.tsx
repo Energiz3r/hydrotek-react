@@ -1,5 +1,6 @@
 import React from "react";
-import * as styles from "./Card.css";
+import { styles } from "./Card.css";
+import { palette } from "../../theme";
 
 export interface CardProps {
   isButton?: boolean;
@@ -11,7 +12,10 @@ export const Card = ({ isButton, color, children }: CardProps) => {
   return (
     <div
       className={styles.container}
-      style={{ cursor: isButton ? "pointer" : "initial" }}
+      style={{
+        cursor: isButton ? "pointer" : "initial",
+        borderLeft: `0.3rem solid ${color ? color : palette.theme.highlight}`,
+      }}
     >
       {isButton ? (
         <div className={styles.addContainer}>
