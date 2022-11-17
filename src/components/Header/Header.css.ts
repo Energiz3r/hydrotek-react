@@ -5,9 +5,10 @@ export const styles = {
   container: style({
     background: palette.theme.highlight,
     color: palette.theme.text,
+    padding: "20px",
   }),
   contentContainer: style({
-    background: "",
+    display: "flex",
   }),
   logoContainer: style({
     //background: "rgb(255,180,180)",
