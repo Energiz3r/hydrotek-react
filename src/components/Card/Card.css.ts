@@ -4,19 +4,14 @@ import { processColors } from "../../utils/processColors";
 
 const container = style({
   transition: "all 0.2s ease",
-  background: `radial-gradient(${processColors(0.1, palette.theme.container)},${
-    palette.theme.container
-  })`,
   borderRadius: ".4rem",
   height: "35rem",
   boxShadow: ".2rem .2rem .4rem .2rem rgba(20,20,20,0.2)",
   display: "grid",
   color: palette.theme.text,
+  background: `radial-gradient(${palette.gradients.darkA},${palette.gradients.darkB})`,
   ":hover": {
-    background: `radial-gradient(${processColors(
-      0.125,
-      palette.theme.container
-    )},${processColors(0.025, palette.theme.container)})`,
+    background: `radial-gradient(${palette.gradients.lightA},${palette.gradients.lightB})`,
     boxShadow: ".5rem .5rem .8rem .2rem rgba(20,20,20,0.5)",
   },
 });

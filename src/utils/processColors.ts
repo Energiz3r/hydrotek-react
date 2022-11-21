@@ -1,12 +1,14 @@
 // Version 4.1
 // @ts-nocheck
-export const processColors = (
+const processColor = (
   percentage: number,
   color0: string,
   color1?: string,
   linear?: boolean
 ) => {
-  console.log(color0);
+  if (color0.includes("var(")) {
+    throw `Tried to call processColors with a css var! ${color0}`;
+  }
   let r,
     g,
     b,
@@ -27,11 +29,11 @@ export const processColors = (
     return null;
   (h = color0.length > 9),
     (h = a ? (color1.length > 9 ? true : color1 == "c" ? !h : false) : h),
-    (f = processColors.pSBCr(color0)),
+    (f = processColor.pSBCr(color0)),
     (P = percentage < 0),
     (t =
       color1 && color1 != "c"
-        ? processColors.pSBCr(color1)
+        ? processColor.pSBCr(color1)
         : P
         ? { r: 0, g: 0, b: 0, a: -1 }
         : { r: 255, g: 255, b: 255, a: -1 }),
@@ -71,7 +73,7 @@ export const processColors = (
     );
 };
 
-processColors.pSBCr = (d) => {
+processColor.pSBCr = (d) => {
   const i = parseInt;
   let n = d.length,
     x = {};
@@ -104,4 +106,13 @@ processColors.pSBCr = (d) => {
     else (x.r = d >> 16), (x.g = (d >> 8) & 255), (x.b = d & 255), (x.a = -1);
   }
   return x;
+};
+
+export const processColors = (
+  percentage: number,
+  color0: string,
+  color1?: string,
+  linear?: boolean
+) => {
+  return processColor(percentage, color0, color1, linear) || "";
 };

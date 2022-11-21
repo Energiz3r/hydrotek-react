@@ -19,9 +19,10 @@ export const decorators = [
   (Story) => (
     <ThemeProvider theme={ThemeName.dark}>
       <GlobalFonts />
-      <GlobalStyles />
-      <div>./storybook/preview.jsx: applied global styles / theme</div>
-      <Story />
+      <GlobalStyles>
+        <div>./storybook/preview.jsx: applied global styles / theme</div>
+        <Story />
+      </GlobalStyles>
     </ThemeProvider>
   ),
 ];

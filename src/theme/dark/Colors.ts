@@ -1,4 +1,6 @@
 import { PaletteColor } from "../ThemeColor";
+import { processColors } from "../../utils/processColors";
+import { palette } from "../Theme.css";
 
 const mainPalette = {
   highlight: "#3C78FF", // blue
@@ -10,6 +12,12 @@ const mainPalette = {
 
 export const colors: PaletteColor = {
   theme: mainPalette,
+  gradients: {
+    darkA: processColors(0.1, mainPalette.container),
+    darkB: mainPalette.container,
+    lightA: processColors(0.125, mainPalette.container),
+    lightB: processColors(0.025, mainPalette.container),
+  },
   border: {
     main: "rgb(53, 54, 56)",
   },

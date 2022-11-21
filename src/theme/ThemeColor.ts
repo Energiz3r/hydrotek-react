@@ -6,6 +6,12 @@ export const PaletteColorToken = {
     container: "",
     background: "",
   },
+  gradients: {
+    darkA: "",
+    darkB: "",
+    lightA: "",
+    lightB: "",
+  },
   border: {
     main: "",
   },

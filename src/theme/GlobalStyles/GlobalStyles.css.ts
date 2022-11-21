@@ -16,16 +16,14 @@ const {
   sectionTitle,
 } = typography;
 
-const gs = style({});
-export const globalStylesContainer = gs;
-globalStyle(`${gs} > div`, {
+export const globalStylesContainer = style({
   fontFamily,
-  boxSizing: "border-box",
 });
 
 globalStyle("html, body", {
   backgroundColor: "#000",
   margin: 0,
+  boxSizing: "border-box",
 });
 globalStyle("html button, html input, html select, html textarea", {
   fontFamily: "inherit",

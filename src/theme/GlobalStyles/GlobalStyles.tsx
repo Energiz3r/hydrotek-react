@@ -1,6 +1,12 @@
 import React from "react";
-import * as styles from "./GlobalStyles.css";
+import { globalStylesContainer } from "./GlobalStyles.css";
+import { GlobalFonts } from "../GlobalFonts/GlobalFonts";
 
 export const GlobalStyles = ({ children }: { children: React.ReactNode }) => {
-  return <div className={styles.globalStylesContainer}>{children}</div>;
+  return (
+    <div className={globalStylesContainer}>
+      <GlobalFonts />
+      {children}
+    </div>
+  );
 };
