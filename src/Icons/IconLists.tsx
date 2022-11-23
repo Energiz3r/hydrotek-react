@@ -1,7 +1,7 @@
 import React from "react";
 import { style } from "@vanilla-extract/css";
 import { ClickToCopy } from "./ClickToCopy";
-import { glyphs, illustrated } from "./IconListsGenerated";
+import { icons } from "./IconListsGenerated";
 import { palette } from "../theme";
 
 const icon = style({
@@ -26,15 +26,7 @@ const styles = {
   },
 };
 
-const icons = {
-  glyphs,
-  illustrated,
-};
-
-type IconListProps = {
-  type: keyof typeof icons;
-};
-export const IconList = ({ type }: IconListProps): JSX.Element => {
+export const IconList = (): JSX.Element => {
   const IconWrapper = ({
     name,
     children,
@@ -53,7 +45,7 @@ export const IconList = ({ type }: IconListProps): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      {icons[type].map((Icon: any, i: number) => (
+      {icons.map((Icon: any, i: number) => (
         <IconWrapper name={Icon.displayName} key={i}>
           <Icon />
           <div>{Icon.displayName}</div>
