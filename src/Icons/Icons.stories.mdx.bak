@@ -1,0 +1,174 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs';
+import { IconList } from './IconLists';
+import ThemeProvider from '../../../theme';
+import GlobalStyles from '../../GlobalStyles';
+import CartIcon from '../Cart';
+import LightningIcon from '../Lightning';
+import CustomIcon, { createIcon } from '../../Icon';
+
+<Meta title='Components/Icons' />
+
+## Built in icons
+
+### Glyphs
+
+<ThemeProvider>
+  <GlobalStyles />
+  <IconList type='glyphs' />
+</ThemeProvider>
+
+### Illustrated
+
+<ThemeProvider>
+  <GlobalStyles />
+  <IconList type='illustrated' />
+</ThemeProvider>
+
+## Component
+
+<Canvas>
+  <Story name='Default'>
+    <CartIcon />
+  </Story>
+</Canvas>
+
+### Icon size
+
+By default, icons will match the size of surrounding text
+
+<Canvas>
+  <Story name='Match font size'>
+    <p style={{ fontSize: '32px' }}>
+      32px <LightningIcon />
+    </p>
+    <p style={{ fontSize: '16px' }}>
+      16px <LightningIcon />
+    </p>
+  </Story>
+</Canvas>
+
+A custom `width` and `height` prop can also be passed
+
+<Canvas>
+  <Story name='Custom size'>
+    <LightningIcon height='12px' />
+  </Story>
+</Canvas>
+
+### Custom icons
+
+`<CustomIcon />` can be used to render a custom `svg`
+
+<Canvas>
+  <Story name='Icon'>
+    <CustomIcon viewBox='0 0 32 32'>
+      <path
+        d='M26.002 13H20V7.026a2.026 2.026 0 0 0-3.608-1.266L9 15h.001H9v10l3 2h12.473c.892 0 1.676-.592 1.921-1.451l2.49-8.725C29.43 14.908 27.993 13 26.002 13z'
+        fill='none'
+        stroke='#000'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeMiterlimit='10'
+        strokeWidth='2'
+      />
+      <rect
+        fill='none'
+        height='14'
+        stroke='#000'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeMiterlimit='10'
+        strokeWidth='2'
+        width='6'
+        x='3'
+        y='13'
+      />
+      <circle cx='6' cy='23' r='1' />
+    </CustomIcon>
+  </Story>
+</Canvas>
+
+Reusable custom icon components should be created suing `createIcon`
+
+```tsx
+import { createIcon } from './Icon';
+
+// Icons can be created using the path prop which supports all svg elements
+const CustomPathIcon = createIcon({
+  path: (
+    <>
+      <path
+        d='M26.002 13H20V7.026a2.026 2.026 0 0 0-3.608-1.266L9 15h.001H9v10l3 2h12.473c.892 0 1.676-.592 1.921-1.451l2.49-8.725C29.43 14.908 27.993 13 26.002 13z'
+        fill='none'
+        stroke='#000'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeMiterlimit='10'
+        strokeWidth='2'
+      />
+      <rect
+        fill='none'
+        height='14'
+        stroke='#000'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeMiterlimit='10'
+        strokeWidth='2'
+        width='6'
+        x='3'
+        y='13'
+      />
+      <circle cx='6' cy='23' r='1' />
+    </>
+  ),
+  viewBox: '0 0 32 32'
+});
+
+// or with the d prop for simple paths
+const CustomDIcon = createIcon({
+  d: 'M315,0H15C6.716,0,0,6.716,0,15v300c0,8.284,6.716,15,15,15h300c8.284,0,15-6.716,15-15V15  C330,6.716,323.285,0,315,0z M300,300H30V30h270V300z',
+  viewBox: '0 0 330 330'
+});
+```
+
+export const CustomDIcon = createIcon({
+  d: 'M315,0H15C6.716,0,0,6.716,0,15v300c0,8.284,6.716,15,15,15h300c8.284,0,15-6.716,15-15V15  C330,6.716,323.285,0,315,0z M300,300H30V30h270V300z',
+  viewBox: '0 0 330 330'
+});
+
+export const CustomPathIcon = createIcon({
+  path: (
+    <>
+      <path
+        d='M26.002 13H20V7.026a2.026 2.026 0 0 0-3.608-1.266L9 15h.001H9v10l3 2h12.473c.892 0 1.676-.592 1.921-1.451l2.49-8.725C29.43 14.908 27.993 13 26.002 13z'
+        fill='none'
+        stroke='#000'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeMiterlimit='10'
+        strokeWidth='2'
+      />
+      <rect
+        fill='none'
+        height='14'
+        stroke='#000'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeMiterlimit='10'
+        strokeWidth='2'
+        width='6'
+        x='3'
+        y='13'
+      />
+      <circle cx='6' cy='23' r='1' />
+    </>
+  ),
+  viewBox: '0 0 32 32'
+});
+
+<Canvas>
+  <Story name='Icon with createIcon'>
+    <CustomPathIcon />
+    <CustomDIcon />
+  </Story>
+</Canvas>
