@@ -1,32 +1,11 @@
-import React from "react";
-import { style } from "@vanilla-extract/css";
+import React, { useState } from "react";
 import { ClickToCopy } from "./ClickToCopy";
 import { icons } from "./IconListsGenerated";
-import { palette } from "../theme";
-
-const icon = style({
-  border: `1px solid ${palette.border.main}`,
-  padding: "16px",
-  width: "100%",
-  textAlign: "center",
-});
-const styles = {
-  container: style({
-    display: "grid",
-    gridGap: "16px",
-    gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
-  }),
-  icon,
-  selectors: {
-    [`${icon}& div`]: style({
-      color: palette.border.main,
-      fontSize: "12px",
-      paddingTop: "16px",
-    }),
-  },
-};
+import { styles } from "./IconLists.css";
 
 export const IconList = (): JSX.Element => {
+  const [searchString, setSearchString] = useState("");
+
   const IconWrapper = ({
     name,
     children,
@@ -35,7 +14,7 @@ export const IconList = (): JSX.Element => {
     children: React.ReactNode;
   }) => {
     const file = name?.replace("Icon", "");
-    const path = `import ${name} from 'jb_component_library/components/Icons/${file}';`;
+    const path = `import { ${name} } from './Icons/${file}';`;
     return (
       <ClickToCopy content={path}>
         <div className={styles.icon}>{children}</div>
@@ -43,14 +22,34 @@ export const IconList = (): JSX.Element => {
     );
   };
 
+  const handleSearch = (event: any) => {
+    setSearchString(event.target.value);
+  };
+
+  const iconListFiltered =
+    searchString !== ""
+      ? icons
+          .filter((iconObj) =>
+            iconObj.iconName.toLowerCase().includes(searchString.toLowerCase())
+          )
+          .slice(0, 50)
+      : icons.slice(0, 50);
+
   return (
     <div className={styles.container}>
-      {icons.map((Icon: any, i: number) => (
-        <IconWrapper name={Icon.displayName} key={i}>
-          <Icon />
-          <div>{Icon.displayName}</div>
-        </IconWrapper>
-      ))}
+      <div>
+        <h4>Search</h4>
+        <input type="text" onChange={handleSearch} value={searchString} />
+      </div>
+      {iconListFiltered.map((iconObj: any, i: number) => {
+        const Icon = iconObj.Icon;
+        return (
+          <IconWrapper name={iconObj.Icon.name} key={i}>
+            <Icon />
+            <div>{iconObj.iconName}</div>
+          </IconWrapper>
+        );
+      })}
     </div>
   );
 };

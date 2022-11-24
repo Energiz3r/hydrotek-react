@@ -1,59 +1,68 @@
 import { Meta, Canvas, Story } from '@storybook/addon-docs';
 import { IconList } from './IconLists';
-import ThemeProvider from '../../../theme';
-import GlobalStyles from '../../GlobalStyles';
-import CartIcon from '../Cart';
-import LightningIcon from '../Lightning';
-import CustomIcon, { createIcon } from '../../Icon';
+import { CustomIcon, createIcon } from '../theme';
 
 <Meta title='Components/Icons' />
 
 ## Built in icons
 
 ### Glyphs
+<IconList />
 
-<ThemeProvider>
-  <GlobalStyles />
-  <IconList type='glyphs' />
-</ThemeProvider>
+[//]: # ()
+[//]: # (## Component)
 
-### Illustrated
+[//]: # ()
+[//]: # (<Canvas>)
 
-<ThemeProvider>
-  <GlobalStyles />
-  <IconList type='illustrated' />
-</ThemeProvider>
+[//]: # (  <Story name='Default'>)
 
-## Component
+[//]: # (    <CartIcon />)
 
-<Canvas>
-  <Story name='Default'>
-    <CartIcon />
-  </Story>
-</Canvas>
+[//]: # (  </Story>)
 
-### Icon size
+[//]: # (</Canvas>)
 
-By default, icons will match the size of surrounding text
+[//]: # ()
+[//]: # (### Icon size)
 
-<Canvas>
-  <Story name='Match font size'>
-    <p style={{ fontSize: '32px' }}>
-      32px <LightningIcon />
-    </p>
-    <p style={{ fontSize: '16px' }}>
-      16px <LightningIcon />
-    </p>
-  </Story>
-</Canvas>
+[//]: # ()
+[//]: # (By default, icons will match the size of surrounding text)
 
-A custom `width` and `height` prop can also be passed
+[//]: # ()
+[//]: # (<Canvas>)
 
-<Canvas>
-  <Story name='Custom size'>
-    <LightningIcon height='12px' />
-  </Story>
-</Canvas>
+[//]: # (  <Story name='Match font size'>)
+
+[//]: # (    <p style={{ fontSize: '32px' }}>)
+
+[//]: # (      32px <LightningIcon />)
+
+[//]: # (    </p>)
+
+[//]: # (    <p style={{ fontSize: '16px' }}>)
+
+[//]: # (      16px <LightningIcon />)
+
+[//]: # (    </p>)
+
+[//]: # (  </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (A custom `width` and `height` prop can also be passed)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (  <Story name='Custom size'>)
+
+[//]: # (    <LightningIcon height='12px' />)
+
+[//]: # (  </Story>)
+
+[//]: # (</Canvas>)
 
 ### Custom icons
 

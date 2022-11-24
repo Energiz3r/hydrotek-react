@@ -5,4 +5,5 @@ export { breakpoints } from "./breakpoints";
 export { GlobalStyles } from "./GlobalStyles/GlobalStyles";
 export { GlobalFonts } from "./GlobalFonts/GlobalFonts";
 export { createIcon } from "./createIcon/createIcon";
+export { CustomIcon } from "./createIcon/CustomIcon";
 export { ThemeProvider, ThemeName } from "./ThemeProvider";

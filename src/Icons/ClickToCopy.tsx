@@ -1,23 +1,4 @@
 import React, { useState } from "react";
-import { style } from "@vanilla-extract/css";
-import { classNames } from "../utils/utils";
-
-const styles = {
-  container: style({
-    zIndex: "999",
-    position: "fixed",
-    top: "0",
-    left: "50%",
-    transform: "translateX(-50%)",
-    visibility: "hidden",
-    opacity: 0,
-    transition: "all 200ms",
-  }),
-  visible: style({
-    visibility: "visible",
-    opacity: 1,
-  }),
-};
 
 export interface ClickToCopyProps {
   content: string;
@@ -54,10 +35,16 @@ export const ClickToCopy = ({
         })
       )}
       <div
-        className={classNames([
-          styles.container,
-          copiedVisible && styles.visible,
-        ])}
+        style={{
+          zIndex: "999",
+          position: "fixed",
+          top: "0",
+          left: "50%",
+          transform: "translateX(-50%)",
+          transition: "all 200ms",
+          visibility: copiedVisible ? "visible" : "hidden",
+          opacity: copiedVisible ? 1 : 0,
+        }}
       >
         Success / Copied: {copiedText}
       </div>

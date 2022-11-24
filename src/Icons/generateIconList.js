@@ -27,7 +27,9 @@ const processIcons = () => {
     names: [],
   };
 
-  const styleFolders = iconsFolders.filter((file) => !file.includes("."));
+  const styleFolders = iconsFolders.filter(
+    (file) => !file.includes(".") && file === "regular"
+  );
 
   styleFolders.forEach((styleFolder, index) => {
     if (!styleFolder) {
@@ -38,13 +40,12 @@ const processIcons = () => {
       const iconName = snakeKebabToPascal(file.substring(0, file.indexOf(".")));
       const importString = `import { ReactComponent as ${styleFolder}${iconName}Icon } from './${styleFolder}/${file}';`;
       iconLists.imports.push(importString);
-      iconLists.names.push(` ${styleFolder}${iconName}Icon`);
-      //const indexString = `export { default as ${directory}${iconName} } from './${directory}/${iconName}';`;
-      //indexExportList.push(indexString);
+      iconLists.names.push(
+        ` { Icon: ${styleFolder}${iconName}Icon, iconName: '${styleFolder}${iconName}Icon' }`
+      );
     });
   });
 
-  console.log(iconLists);
   let fileContents = iconLists.imports.join("\n");
   fileContents += `\n\nexport const icons = [\n${iconLists.names.join(
     ",\n"
@@ -52,11 +53,6 @@ const processIcons = () => {
   fs.writeFile(__dirname + "/IconListsGenerated.ts", fileContents, (err) => {
     if (err) throw err;
   });
-
-  //const indexFileContents = indexExportList.join("\n");
-  //fs.writeFile(__dirname + "index.ts", indexFileContents + "\n", (err) => {
-  //if (err) throw err;
-  //});
 
   console.log("Done.");
 };
