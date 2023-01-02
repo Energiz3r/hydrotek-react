@@ -8,13 +8,15 @@ export const IconList = (): JSX.Element => {
 
   const IconWrapper = ({
     name,
+    file,
     children,
   }: {
     name?: string;
+    file?: string;
     children: React.ReactNode;
   }) => {
-    const file = name?.replace("Icon", "");
-    const path = `import { ${name} } from './Icons/${file}';`;
+    //const file = name?.replace("Icon", "");
+    const path = `import { ReactComponent as ${name} } from '../Icons/${file}';`;
     return (
       <ClickToCopy content={path}>
         <div className={styles.icon}>{children}</div>
@@ -44,7 +46,7 @@ export const IconList = (): JSX.Element => {
       {iconListFiltered.map((iconObj: any, i: number) => {
         const Icon = iconObj.Icon;
         return (
-          <IconWrapper name={iconObj.Icon.name} key={i}>
+          <IconWrapper name={iconObj.Icon.name} file={iconObj.iconFile} key={i}>
             <Icon />
             <div>{iconObj.iconName}</div>
           </IconWrapper>

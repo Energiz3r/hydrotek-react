@@ -11,12 +11,18 @@ export const styles = {
     display: "flex",
   }),
   logoContainer: style({
-    //background: "rgb(255,180,180)",
+    fill: "white",
+    fontSize: "40px",
+    marginRight: "1rem",
+    display: "flex",
   }),
   titleContainer: style({
-    //background: "rgb(180,255,180)",
+    fontSize: "40px",
+    marginRight: "1rem",
   }),
   utilityContainer: style({
-    //background: "rgb(180,180,255)",
+    left: "auto",
+    right: 0,
+    fill: "white",
   }),
 };

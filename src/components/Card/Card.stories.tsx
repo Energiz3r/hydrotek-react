@@ -10,10 +10,28 @@ const options = {
 export default options;
 
 const Template: ComponentStory<typeof Card> = (args: CardProps) => (
-  <Card isButton={true}>Test Button</Card>
+  <Card {...args}>
+    <p
+      style={{
+        padding: "3rem",
+      }}
+    >
+      Test Content
+    </p>
+  </Card>
 );
 
 export const Default = Template.bind({});
-Default.args = {
+Default.args = {};
+
+export const Add = Template.bind({});
+Add.args = {
   isButton: true,
+};
+
+export const HeightAndRadius = Template.bind({});
+HeightAndRadius.args = {
+  isButton: true,
+  height: 35,
+  borderRadius: 4,
 };

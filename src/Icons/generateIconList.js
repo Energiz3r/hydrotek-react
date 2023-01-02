@@ -41,7 +41,7 @@ const processIcons = () => {
       const importString = `import { ReactComponent as ${styleFolder}${iconName}Icon } from './${styleFolder}/${file}';`;
       iconLists.imports.push(importString);
       iconLists.names.push(
-        ` { Icon: ${styleFolder}${iconName}Icon, iconName: '${styleFolder}${iconName}Icon' }`
+        ` { Icon: ${styleFolder}${iconName}Icon, iconName: '${styleFolder}${iconName}Icon', iconFile: 'regular/${file}' }`
       );
     });
   });
