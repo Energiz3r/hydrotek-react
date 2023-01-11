@@ -1,15 +1,15 @@
 import React from "react";
 import { darkTheme } from "./dark/theme.css";
-import { lightTheme } from "./light/theme.css";
+//import { lightTheme } from "./light/theme.css";
 import { themeToken, ThemeProps } from "./Theme.css";
 
 export enum ThemeName {
   dark = "dark",
-  light = "light",
+  //light = "light",
 }
 const ThemeMap = {
   dark: darkTheme,
-  light: lightTheme,
+  //light: lightTheme,
 };
 
 const ThemeContext = React.createContext<{ themeValues: ThemeProps }>({

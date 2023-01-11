@@ -1,28 +1,58 @@
 import { style } from "@vanilla-extract/css";
-import { palette, shadows, breakpoints } from "../../theme";
+import { palette, breakpoints } from "../../theme";
 
 export const styles = {
-  container: style({
-    background: palette.theme.highlight,
-    color: palette.theme.text,
-    padding: "20px",
-  }),
+  container: style([
+    {
+      background: palette.theme.darkShade,
+      color: palette.theme.lightShade,
+      padding: "0.5rem",
+    },
+    breakpoints.desktop({
+      padding: "1rem",
+    }),
+  ]),
   contentContainer: style({
     display: "flex",
+    alignItems: "center",
   }),
-  logoContainer: style({
-    fill: "white",
+  menuButtonContainer: style({
     fontSize: "40px",
     marginRight: "1rem",
+  }),
+  titleContainer: style([
+    {
+      fontSize: "20px",
+      marginRight: "0.5rem",
+    },
+    breakpoints.desktop({
+      fontSize: "40px",
+      marginRight: "1rem",
+    }),
+  ]),
+  logoContainer: style({
+    fill: palette.theme.lightShade,
     display: "flex",
   }),
-  titleContainer: style({
-    fontSize: "40px",
-    marginRight: "1rem",
+  menuButton: style({
+    fill: palette.theme.lightShade,
+    border: "none",
+    cursor: "pointer",
+    backgroundColor: "rgba(139,130,119,0.5)",
+    ":hover": {
+      backgroundColor: palette.theme.brand,
+    },
   }),
-  utilityContainer: style({
-    left: "auto",
-    right: 0,
-    fill: "white",
-  }),
+  utilityContainer: style([
+    {
+      float: "right",
+      position: "absolute",
+      right: "2.5rem",
+      fill: palette.theme.lightShade,
+      fontSize: "10px",
+    },
+    breakpoints.desktop({
+      fontSize: "20px",
+    }),
+  ]),
 };

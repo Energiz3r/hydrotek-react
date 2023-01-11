@@ -21,9 +21,10 @@ export const globalStylesContainer = style({
 });
 
 globalStyle("html, body", {
-  backgroundColor: "#000",
+  backgroundColor: "#191919",
   margin: 0,
   boxSizing: "border-box",
+  color: "#8e8e8e",
 });
 globalStyle("html button, html input, html select, html textarea", {
   fontFamily: "inherit",

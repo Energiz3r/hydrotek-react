@@ -1,10 +1,12 @@
 export const PaletteColorToken = {
   theme: {
-    highlight: "",
-    alternate: "",
-    text: "",
-    container: "",
-    background: "",
+    lightShade: "",
+    lightAccent: "",
+    brand: "",
+    darkAccent: "",
+    darkShade: "",
+
+    darkerShade: "",
   },
   gradients: {
     darkA: "",

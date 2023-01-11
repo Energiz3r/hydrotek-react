@@ -1,13 +1,32 @@
-import { Card } from "./components/Card/Card";
+import React, { useState } from "react";
 import { Header } from "./components/Header/Header";
-import { IconList } from "./Icons/IconLists";
-import React from "react";
+import { Menu } from "./components/Menu/Menu";
 
 function App() {
+  const [shouldShowMenu, setShouldShowMenu] = useState(true);
+  const handleMenuToggle = () => {
+    setShouldShowMenu(!shouldShowMenu);
+  };
   return (
     <>
-      <Header />
-      {/*<Card>Hello</Card>*/}
+      <Header
+        onMenuToggle={handleMenuToggle}
+        loggedIn={true}
+        loginName={"Tim"}
+      />
+      {shouldShowMenu ? <Menu /> : null}
+
+      <div style={{}}>
+        zontent Content Content Content Content Content Content Content Content
+        Content Content Content Content Content Content Content Content Content
+        Content Content Content Content Content Content Content Content Content
+        Content Content Content Content Content Content Content Content Content
+        Content Content Content Content Content Content Content Content Content
+        Content Content Content Content Content Content Content Content Content
+        Content Content Content Content Content Content Content Content Content
+        Content Content Content Content Content Content Content Content Content
+        Content Content Content Lontent
+      </div>
     </>
   );
 }

@@ -48,7 +48,18 @@ const buildResponsiveStyle = (direction: Direction) => ({
   xxl: buildMediaQueryFunc("xxl", direction),
 });
 
+const desktop = (style: StyleRule) => {
+  return {
+    "@media": {
+      "screen and (min-width: 768px)": {
+        ...style,
+      },
+    },
+  };
+};
+
 export const breakpoints = {
+  desktop,
   min: buildResponsiveStyle("min"),
   max: buildResponsiveStyle("max"),
   between: buildCombinedMediaQueryFunc,
