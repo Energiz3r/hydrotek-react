@@ -163,16 +163,7 @@ class Devices extends React.Component {
   textValidate = (value, maxLength = 255) => {
     return value.substr(0, maxLength);
   };
-  emailValidate = (email) => {
-    if (
-      !email ||
-      email.match(
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      )
-    ) {
-      return true;
-    } else return false;
-  };
+
   render() {
     const { deviceList } = this.state;
     return (
@@ -311,7 +302,7 @@ class Devices extends React.Component {
                     (device.deviceShowing ? " fa-rotate-90" : "")
                   }
                 ></i>
-              </div>
+              </div
               {device.deviceShowing && (
                 <div>
                   <div className="device-option-container">

@@ -3,7 +3,7 @@ import { Card, CardProps } from "./Card";
 import type { ComponentStory } from "@storybook/react";
 
 const options = {
-  title: "Components/Card",
+  title: "Components/Switch",
   component: Card,
 };
 

@@ -3,7 +3,7 @@ import { styles } from "./Menu.css";
 
 export const Menu = () => {
   return (
-    <div style={{ position: "relative" }}>
+    <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.menuItemContainer}>Home</div>
         <div className={styles.menuItemContainer}>Something else</div>

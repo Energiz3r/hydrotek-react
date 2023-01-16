@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Header } from "./components/Header/Header";
 import { Menu } from "./components/Menu/Menu";
+import { DeviceSettings } from "./components/DeviceSettings/DeviceSettings";
 
 function App() {
-  const [shouldShowMenu, setShouldShowMenu] = useState(true);
+  const [shouldShowMenu, setShouldShowMenu] = useState(false);
   const handleMenuToggle = () => {
     setShouldShowMenu(!shouldShowMenu);
   };
@@ -15,18 +16,7 @@ function App() {
         loginName={"Tim"}
       />
       {shouldShowMenu ? <Menu /> : null}
-
-      <div style={{}}>
-        zontent Content Content Content Content Content Content Content Content
-        Content Content Content Content Content Content Content Content Content
-        Content Content Content Content Content Content Content Content Content
-        Content Content Content Content Content Content Content Content Content
-        Content Content Content Content Content Content Content Content Content
-        Content Content Content Content Content Content Content Content Content
-        Content Content Content Content Content Content Content Content Content
-        Content Content Content Content Content Content Content Content Content
-        Content Content Content Lontent
-      </div>
+      <DeviceSettings />
     </>
   );
 }

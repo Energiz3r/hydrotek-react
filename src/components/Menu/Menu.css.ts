@@ -2,6 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { spacing, breakpoints, palette } from "../../theme";
 
 export const styles = {
+  wrapper: style({ position: "relative" }),
   container: style([
     {
       background: palette.theme.darkerShade,
