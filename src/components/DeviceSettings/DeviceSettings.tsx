@@ -10,7 +10,7 @@ import { EmailInput } from "../Inputs/EmailInput/EmailInput";
 interface DeviceSettingsProps {}
 
 export const DeviceSettings = ({}: DeviceSettingsProps) => {
-  const [emailAddress, setEmailAddress] = useState("tim.eastwood@hotmail.com");
+  const [emailAddress, setEmailAddress] = useState("demo@noobs.wtf");
   const [isEmailAlertsEnabled, setIsEmailAlertsEnabled] = useState(true);
   const [devices, setDevices] = useState<Array<deviceType>>(dummyDevices);
   const handleEmailChange = (email: string, valid: boolean) => {
