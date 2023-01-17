@@ -57,9 +57,19 @@ const desktop = (style: StyleRule) => {
     },
   };
 };
+const desktopSmall = (style: StyleRule) => {
+  return {
+    "@media": {
+      "screen and (min-width: 450px)": {
+        ...style,
+      },
+    },
+  };
+};
 
 export const breakpoints = {
   desktop,
+  desktopSmall,
   min: buildResponsiveStyle("min"),
   max: buildResponsiveStyle("max"),
   between: buildCombinedMediaQueryFunc,

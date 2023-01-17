@@ -1,94 +1,96 @@
+const dummyDevice1st = {
+  deviceLabel: "Greenhouse",
+  lastSeenTimestamp: 1616278496000,
+  loggingEnabled: true,
+  uploadFrequency: 5,
+  lampIsOn: true,
+  wasteTankFull: false,
+  devicePlants: [
+    {
+      plantName: "Strawberries",
+
+      tempEnabled: true,
+      tempLampShutoff: false,
+      tempLampMaxTemp: 0,
+      tempHiEmail: false,
+      tempHiAlarm: false,
+      tempHiTemp: 35.5,
+      tempLoEmail: false,
+      tempLoAlarm: false,
+      tempLoTemp: 35.5,
+
+      lampEnabled: true,
+      lampHeaterMode: false,
+      lampHeaterTemp: 0,
+      lampStartTimeV: "05:00",
+      lampEndTimeV: "23:00",
+      lampFlowerMode: false,
+      lampStartTimeF: "08:00",
+      lampEndTimeF: "20:00",
+      lampInvertLogic: false,
+
+      pumpEnabled: true,
+      pumpFlowMode: false,
+      pumpFlowMl: 0,
+      pumpFlowEmail: false,
+      pumpFlowAlarm: false,
+      pumpMaxDurationSec: 20,
+      pumpFrequencyMins: 15,
+      pumpInvertLogic: false,
+
+      floatEnable: true,
+      floatAlarm: false,
+      floatEmail: false,
+      floatPumpShutoff: true,
+      floatInvertLogic: false,
+
+      flowEnable: true,
+    },
+    {
+      plantName: "Tomatoes",
+
+      tempEnabled: true,
+      tempLampShutoff: false,
+      tempLampMaxTemp: 0,
+      tempHiEmail: false,
+      tempHiAlarm: false,
+      tempHiTemp: 35.5,
+      tempLoEmail: false,
+      tempLoAlarm: false,
+      tempLoTemp: 35.5,
+
+      lampEnabled: true,
+      lampHeaterMode: false,
+      lampHeaterTemp: 0,
+      lampStartTimeV: "05:00",
+      lampEndTimeV: "23:00",
+      lampFlowerMode: false,
+      lampStartTimeF: "08:00",
+      lampEndTimeF: "20:00",
+      lampInvertLogic: false,
+
+      pumpEnabled: false,
+      pumpFlowMode: false,
+      pumpFlowMl: 0,
+      pumpFlowEmail: false,
+      pumpFlowAlarm: false,
+      pumpMaxDurationSec: 20,
+      pumpFrequencyMins: 15,
+      pumpInvertLogic: false,
+
+      floatEnable: false,
+      floatAlarm: false,
+      floatEmail: false,
+      floatPumpShutoff: true,
+      floatInvertLogic: false,
+
+      flowEnable: false,
+    },
+  ],
+};
+
 export const dummyDevices = [
-  {
-    deviceLabel: "Greenhouse",
-    lastSeenTimestamp: 1616278496000,
-    loggingEnabled: true,
-    uploadFrequency: 5,
-    lampIsOn: true,
-    wasteTankFull: false,
-    devicePlants: [
-      {
-        plantName: "Strawberries",
-
-        tempEnabled: true,
-        tempLampShutoff: false,
-        tempLampMaxTemp: 0,
-        tempHiEmail: false,
-        tempHiAlarm: false,
-        tempHiTemp: 35.5,
-        tempLoEmail: false,
-        tempLoAlarm: false,
-        tempLoTemp: 35.5,
-
-        lampEnabled: true,
-        lampHeaterMode: false,
-        lampHeaterTemp: 0,
-        lampStartTimeV: "05:00",
-        lampEndTimeV: "23:00",
-        lampFlowerMode: false,
-        lampStartTimeF: "08:00",
-        lampEndTimeF: "20:00",
-        lampInvertLogic: false,
-
-        pumpEnabled: true,
-        pumpFlowMode: false,
-        pumpFlowMl: 0,
-        pumpFlowEmail: false,
-        pumpFlowAlarm: false,
-        pumpMaxDurationSec: 20,
-        pumpFrequencyMins: 15,
-        pumpInvertLogic: false,
-
-        floatEnable: true,
-        floatAlarm: false,
-        floatEmail: false,
-        floatPumpShutoff: true,
-        floatInvertLogic: false,
-
-        flowEnable: true,
-      },
-      {
-        plantName: "Tomatoes",
-
-        tempEnabled: true,
-        tempLampShutoff: false,
-        tempLampMaxTemp: 0,
-        tempHiEmail: false,
-        tempHiAlarm: false,
-        tempHiTemp: 35.5,
-        tempLoEmail: false,
-        tempLoAlarm: false,
-        tempLoTemp: 35.5,
-
-        lampEnabled: true,
-        lampHeaterMode: false,
-        lampHeaterTemp: 0,
-        lampStartTimeV: "05:00",
-        lampEndTimeV: "23:00",
-        lampFlowerMode: false,
-        lampStartTimeF: "08:00",
-        lampEndTimeF: "20:00",
-        lampInvertLogic: false,
-
-        pumpEnabled: false,
-        pumpFlowMode: false,
-        pumpFlowMl: 0,
-        pumpFlowEmail: false,
-        pumpFlowAlarm: false,
-        pumpMaxDurationSec: 20,
-        pumpFrequencyMins: 15,
-        pumpInvertLogic: false,
-
-        floatEnable: false,
-        floatAlarm: false,
-        floatEmail: false,
-        floatPumpShutoff: true,
-        floatInvertLogic: false,
-
-        flowEnable: false,
-      },
-    ],
-  },
+  dummyDevice1st,
   {
     deviceLabel: "Indoor Garden",
     lastSeenTimestamp: 1593900896000,
@@ -141,4 +143,5 @@ export const dummyDevices = [
   },
 ];
 
-export type deviceSettingsType = typeof dummyDevices;
+export type deviceSettingsType = typeof dummyDevice1st;
+//export type deviceSettingsType = typeof dummyDevices;

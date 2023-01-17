@@ -21,8 +21,12 @@ export const globalStylesContainer = style({
 });
 
 globalStyle("html, body", {
-  backgroundColor: "#191919",
   margin: 0,
+  padding: 0,
+  width: "100%",
+  height: "100%",
+  overflowX: "hidden",
+  backgroundColor: "#191919",
   boxSizing: "border-box",
   color: "#8e8e8e",
 });

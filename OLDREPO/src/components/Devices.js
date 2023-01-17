@@ -302,7 +302,7 @@ class Devices extends React.Component {
                     (device.deviceShowing ? " fa-rotate-90" : "")
                   }
                 ></i>
-              </div
+              </div>
               {device.deviceShowing && (
                 <div>
                   <div className="device-option-container">

@@ -19,6 +19,9 @@ export const styles = {
   containerOn: style({
     backgroundColor: palette.theme.brand,
   }),
+  containerDisabled: style({
+    backgroundColor: palette.theme.lightAccent,
+  }),
   slider: style({
     width: switchSize,
     height: switchSize,
@@ -30,5 +33,8 @@ export const styles = {
   sliderOn: style({
     backgroundColor: palette.theme.lightShade,
     transform: `translateX(${switchSize})`,
+  }),
+  sliderDisabled: style({
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
   }),
 };
