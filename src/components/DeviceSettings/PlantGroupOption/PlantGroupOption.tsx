@@ -24,7 +24,7 @@ export const PlantGroupOption = ({
   icon,
   title,
 }: PlantGroupOptionProps) => {
-  const [isVisible, setIsVisible] = useState(title === "Grow Lamp");
+  const [isVisible, setIsVisible] = useState(title === "Nutrient Pump");
   const handleGroupClick = (e: React.MouseEvent<HTMLInputElement>) => {
     e.stopPropagation();
     setIsVisible(!isVisible);

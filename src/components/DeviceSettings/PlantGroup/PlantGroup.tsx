@@ -6,6 +6,7 @@ import { ReactComponent as SvgCaretDown } from "../../../Icons/regular/caret-dow
 import { ReactComponent as SvgCaretRight } from "../../../Icons/regular/caret-right.svg";
 import { ReactComponent as SvgThermometerHalf } from "../../../Icons/regular/thermometer-half.svg";
 import { ReactComponent as SvgLightbulbOn } from "../../../Icons/regular/lightbulb-on.svg";
+import { ReactComponent as SvgWater } from "../../../Icons/regular/water.svg";
 import { plantType } from "../types";
 import { iconProps } from "../iconProps";
 
@@ -28,6 +29,12 @@ import { LampStartTimeF } from "../Options/Lamp/LampStartTimeF";
 import { LampEndTimeF } from "../Options/Lamp/LampEndTimeF";
 import { LampEndTimeV } from "../Options/Lamp/LampEndTimeV";
 import { LampInvertLogic } from "../Options/Lamp/LampInvertLogic";
+import { PumpEnabled } from "../Options/Pump/PumpEnabled";
+import { PumpFlowMode } from "../Options/Pump/PumpFlowMode";
+import { PumpFlowMl } from "../Options/Pump/PumpFlowMl";
+import { PumpFlowEmail } from "../Options/Pump/PumpFlowEmail";
+import { PumpFlowAlarm } from "../Options/Pump/PumpFlowAlarm";
+import { PumpMaxDurationSec } from "../Options/Pump/PumpMaxDurationSec";
 
 interface PlantGroupProps {
   plantProp: plantType;
@@ -112,6 +119,17 @@ export const PlantGroup = ({
             <LampStartTimeF {...optProps} />
             <LampEndTimeF {...optProps} />
             <LampInvertLogic {...optProps} />
+          </PlantGroupOption>
+          <PlantGroupOption
+            icon={<SvgWater {...iconProps} />}
+            title="Nutrient Pump"
+          >
+            <PumpEnabled {...optProps} />
+            <PumpFlowMode {...optProps} />
+            <PumpFlowMl {...optProps} />
+            <PumpFlowEmail {...optProps} loggingEnabled={loggingEnabled} />
+            <PumpFlowAlarm {...optProps} />
+            <PumpMaxDurationSec {...optProps} />
           </PlantGroupOption>
         </>
       ) : null}
