@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { styles } from "./DeviceLabelInput.css";
-import { textValidate } from "../../../utils/utils";
+import { textValidate } from "../utils";
 
 interface DeviceLabelInputProps {
   onChange: (text: string) => void;
